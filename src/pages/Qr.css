@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.qr-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-container::before {
+  content: 'VOICEPAY';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30rem;
+  background: linear-gradient(165deg, 
+    rgba(255,255,255,0.2) 49.9%, 
+    transparent 50%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 3px rgba(255,255,255,0.2);
+  color: transparent;
+  letter-spacing: -0.01em;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+.qr-content {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 3rem;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.qr-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.qr-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.qr-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.qr-subtitle {
+  font-size: 2rem;
+  color: #4a5568;
+  margin-bottom: 1.5rem;
+}
+
+.qr-description {
+  font-size: 1.2rem;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.scanning-instructions {
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.scanning-instructions p {
+  margin: 0.5rem 0;
+}
+
+.qr-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.verify-btn, .back-btn, .refresh-btn {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.verify-btn {
+  background: rgba(92,202,238,0.8);
+  color: white;
+}
+
+.back-btn {
+  background: rgba(255,255,255,0.2);
+  color: #4a5568;
+  backdrop-filter: blur(5px);
+}
+
+.verify-btn:hover, .back-btn:hover {
+  transform: translateY(-2px);
+}
+
+.qr-code-container {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem;  /* Increased from 2rem */
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.qr-code {
+  padding: 1rem;  /* Increased from 1rem */
+  background: white;
+  border-radius: 8px;
+}
+
+/* Increase QR code size */
+.QRCodeCanvas {
+  width: 300px !important;  /* Increased from default */
+  height: 300px !important;
+}
+
+.qr-code-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.qr-code {
+  background: linear-gradient(145deg, #ffffff, #f3f3f3);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 
+    20px 20px 60px rgba(0, 0, 0, 0.05),
+    -20px -20px 60px rgba(255, 255, 255, 0.8);
+}
+
+.qr-code canvas {
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.qr-code canvas:hover {
+  transform: scale(1.02);
+}
+
+.qr-code canvas {
+  width: 300px !important;
+  height: 300px !important;
+}
+
+.qr-timer {
+  color: #4a5568;
+  font-weight: 700;
+}
+
+.qr-expired-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255,255,0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .qr-content {
+    flex-direction: column;
+    padding: 2rem;
+  }
+  
+  .qr-title {
+    font-size: 2.5rem;
+  }
+  
+  .qr-subtitle {
+    font-size: 1.5rem;
+  }
+}

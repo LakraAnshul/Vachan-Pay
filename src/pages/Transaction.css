@@ -1,0 +1,12 @@
+.transaction-page {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.transaction-page h1 {
+    color: #333;
+}
+
+.transaction-page p {
+    color: #666;
+} 

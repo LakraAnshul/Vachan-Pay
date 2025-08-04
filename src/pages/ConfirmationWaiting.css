@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+.confirmation-container {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+    background-attachment: fixed;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+}
+
+.confirmation-container::before {
+    content: 'VOICEPAY';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 30rem;
+    background: linear-gradient(165deg, 
+        rgba(255,255,255,0.2) 49.9%, 
+        transparent 50%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-stroke: 3px rgba(255,255,255,0.2);
+    color: transparent;
+    letter-spacing: -0.01em;
+    pointer-events: none;
+    z-index: 0;
+    white-space: nowrap;
+}
+
+.confirmation-content {
+    width: 90%;
+    max-width: 600px;
+    z-index: 1;
+}
+
+.confirmation-card {
+    background: rgba(255, 255, 255, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 3rem;
+    text-align: center;
+}
+
+.confirmation-title {
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+    color: #2d3748;
+    margin-bottom: 1rem;
+}
+
+.confirmation-subtitle {
+    font-size: 1.5rem;
+    color: #4a5568;
+    margin-bottom: 2rem;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: rgba(92,202,238,0.8);
+    animation: spin 1s ease-in-out infinite;
+    margin: 0 auto;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.progress-wrapper {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-spinner {
+    color: rgba(92,202,238,0.8) !important;
+}
+
+.confirmation-message {
+    color: #4a5568;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.status-text {
+    margin-top: 1rem;
+    font-weight: 500;
+    color: rgba(92,202,238,0.8);
+}
+
+@media (max-width: 768px) {
+    .confirmation-card {
+        padding: 2rem;
+    }
+    
+    .confirmation-title {
+        font-size: 2.5rem;
+    }
+    
+    .confirmation-subtitle {
+        font-size: 1.2rem;
+    }
+}

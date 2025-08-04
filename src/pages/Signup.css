@@ -1,0 +1,113 @@
+.signup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.signup-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+  margin-bottom: 2rem;
+  padding: 0 2rem;  /* Add padding for better alignment */
+}
+
+/* Adjust the login card width to match form width */
+.login-card {
+  width: 100%;
+  max-width: 900px;  /* Increased to better contain the form */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.signup-form-grid .form-group {
+  margin: 0;
+  position: relative;  /* For password eye positioning */
+}
+
+.signup-form-grid .input-group {
+  width: 100%;
+  position: relative;  /* For proper alignment */
+}
+
+.signup-form-grid .form-input {
+  width: 100%;  /* Changed to full width */
+  padding-right: 40px;  /* Space for the eye icon */
+}
+
+/* Fix password eye icon positioning */
+.password-toggle {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 2;
+}
+
+/* OTP input styling */
+.form-group .form-input[type="text"] {
+  text-align: center;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+}
+
+.signup-button-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.signup-button-container .submit-button {
+  min-width: 150px;
+}
+
+/* Style adjustments for the translucent card */
+.signup-content .login-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Input icon positioning */
+.input-icon {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+/* Adjust input padding for icon */
+.form-input {
+  padding-left: 35px !important;
+}
+
+/* Keep other styles from Login.css */
+.app-container,
+.login-card,
+.login-header,
+.tagline,
+.form-group,
+.form-label,
+.input-group,
+.input-icon,
+.form-input,
+.password-toggle,
+.submit-button,
+.signup-link {
+  /* Keep these styles from Login.css */
+}

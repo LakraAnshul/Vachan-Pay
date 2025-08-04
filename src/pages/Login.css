@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.app-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+  background-attachment: fixed;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  padding: 0;  /* Removed padding */
+}
+
+.login-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+  height: auto;  /* Changed from 100% */
+}
+
+.features-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.security-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: auto;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.security-badges {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  font-size: 0.8rem;  /* Reduced size slightly */
+}
+
+.login-card {
+  margin: auto;
+  height: fit-content;
+}
+
+.features-section {
+  margin: auto;
+  height: fit-content;
+}
+
+/* Adjust card and text visibility */
+.login-card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.app-container::before,
+.app-container::after {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* Make the card more translucent to match the design */
+/* Remove duplicate rules and keep one consolidated login-card style */
+.login-card {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 2.5rem;
+  width: 450px;
+  max-width: 90%;
+  position: relative;
+  z-index: 1;
+}
+
+.app-container::before,
+.app-container::after {
+  color: rgba(255, 255, 255, 0.15);
+}
+
+/* Update the decorative text */
+.app-container::before {
+  content: 'VOICEPAY';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30rem;
+  background: linear-gradient(165deg, 
+    rgba(255,255,255,0.2) 49.9%, 
+    transparent 50%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 3px rgba(255,255,255,0.2);
+  color: transparent;
+  letter-spacing: -0.01em; /* Adjusted to bring letters closer */
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* Remove the after pseudo-element since we're combining the text */
+.app-container::after {
+  content: none;
+}
+
+/* Update float animation for single text */
+@keyframes float {
+  0% { transform: translate(-50%, -50%) translateY(0px); }
+  50% { transform: translate(-50%, -50%) translateY(-20px); }
+  100% { transform: translate(-50%, -50%) translateY(0px); }
+}
+
+.app-container::before {
+  animation: float 6s ease-in-out infinite;
+}
+
+.app-container::after {
+  animation: float 6s ease-in-out infinite reverse;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.login-header h2 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+.login-header p {
+  color: #4a5568;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.input-group {
+  position: relative;
+}
+
+.input-icon {
+  position: absolute;
+  left: 0.75rem;  /* Moved icon more to the left */
+  top: 50%;
+  transform: translateY(-50%);
+  color: #4a5568;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 3rem; /* Increased left padding to 3rem */
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #2d3748;
+  backdrop-filter: blur(5px);
+  font-weight: 500; /* Increased font weight */
+  font-size: 1rem; /* Slightly larger font size */
+}
+
+.form-input::placeholder {
+  color: #718096;
+  font-weight: 400; /* Normal weight for placeholder */
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: rgba(92,202,238,0.6);
+  background: rgba(255, 255, 255, 0.2); /* Slightly more visible when focused */
+}
+
+.password-input {
+  padding-right: 2.5rem;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #4a5568;
+  cursor: pointer;
+}
+
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.checkbox {
+  width: 1rem;
+  height: 1rem;
+}
+
+.forgot-password {
+  color: #4a5568;
+  text-decoration: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(92,202,238,0.8);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.submit-button:hover {
+  background: rgba(92,202,238,1);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.signup-text {
+  color: #4a5568;
+}
+
+.signup-anchor {
+  color: rgba(92,202,238,0.8);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 0.5rem;
+}
+
+.signup-anchor:hover {
+  color: rgba(92,202,238,1);
+}
+
+.login-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.tagline {
+    font-family: 'Poppins', sans-serif;
+    color: #4a5568;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.features-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.35);
+}
+
+.feature-icon {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    color: #2d3748;
+}
+
+/* Animation classes */
+.voice-wave {
+    animation: pulse 2s infinite;
+}
+
+.scan {
+    animation: scan 3s infinite;
+}
+
+.pulse {
+    animation: glow 2s infinite;
+}
+
+.alert {
+    animation: bounce 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes scan {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(92,202,238,0.5); }
+    50% { box-shadow: 0 0 20px rgba(92,202,238,0.8); }
+    100% { box-shadow: 0 0 5px rgba(92,202,238,0.5); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.security-badges {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #2d3748;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 768px) {
+    .login-content {
+        grid-template-columns: 1fr;
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+}
