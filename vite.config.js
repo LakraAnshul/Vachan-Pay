@@ -7,3 +7,5 @@ export default defineConfig({
   base: '/Vachan-Pay/',
   plugins: [react()],
 })
+
+
